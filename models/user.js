@@ -34,8 +34,9 @@ module.exports = (sequelize, DataTypes) => {
   },{
     hooks: {
       beforeCreate: (instance, options) => {
-        instance.password = hashPassword(instance.password);
-      }
+        instance.password = hashPassword(instance.password)
+        if(instance.phone_number[0] == 0) instance.phone_number = Number(`+62${instance.phone_number.toString().slice(1)}`)
+      },
     },
     sequelize,
     modelName: 'User',
