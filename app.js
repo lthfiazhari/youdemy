@@ -1,17 +1,19 @@
-const express = require('express')
-const app = express()
-const port = 3000
-const router = require('./routes/index')
+const express = require("express")
+const session = require("express-session")
+const app = express();
+const router = require("./routes")
+const PORT = 3000;
 
-app.set('view engine', 'ejs')
+app.set("view engine", "ejs")
 app.use(express.urlencoded({extended: true}))
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true
+}))
 
-// app.get('/', function(req, res){
-//     res.send('yooo')
-// })
-app.use(router)
+app.use("/", router);
 
-
-app.listen(port, function(){
-    console.log(`app run on port: ${port}`);
+app.listen(PORT, () => {
+  console.log(`Running on port: ${PORT}`);
 })

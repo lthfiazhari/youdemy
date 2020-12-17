@@ -1,0 +1,21 @@
+<%- include('./partials/head', {title: 'Youdemy - Online Course App'}) %> 
+
+<h1>Youdemy</h1>
+<form action="/" method="post">
+  <div>
+    <label for="username">Username</label><br>
+    <input type="text" name="username">
+  </div>
+  <br>
+  <div>
+    <label for="password">Password</label><br>
+    <input type="password" name="password">
+  </div>
+  <br>
+  <div>
+    <button type="submit">Login</button>
+    <button><a href="/register">Register</a></button>
+  </div>
+</form>
+
+<%- include('./partials/foot') %>

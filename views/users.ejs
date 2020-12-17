@@ -1,0 +1,30 @@
+<%- include('./partials/head', {title: 'Youdemy - Users'}) %> 
+<%- include('./partials/nav') %> 
+
+<h1>User management</h1>
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Gender</th>
+    <th>Phone Number</th>
+    <th>Balance</th>
+    <th>Action</th>
+  </tr>
+  <% for (let i = 0; i < data.length; i++) { %>
+  <tr>
+    <td><%= getFullName(data[i].first_name,data[i].last_name) %></td>
+    <td><%= data[i].email %> </td>
+    <td><%= data[i].gender %></td>
+    <td><%= data[i].phone_number %></td>
+    <td><%= convert(data[i].balance) %></td>
+    <td>
+      <button><a href="users/addbalance/<%= data[i].id %>"> Add Balance </a></button>
+      <button><a href="users/edit/<%= data[i].id %>"> Edit </a></button>
+      <button><a href="users/delete/<%= data[i].id %>"> Delete </a></button>
+    </td>
+  </tr>
+  <% } %>
+</table>
+
+<%- include('./partials/foot') %>

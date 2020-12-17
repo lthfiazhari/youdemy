@@ -1,0 +1,46 @@
+<%- include('./partials/head', {title: 'Edit User'}) %> 
+<%- include("./partials/nav") %>
+
+<div style="text-align: center;">
+  <h1>Edit User</h1>
+  <br>
+  <form action="/users/edit/<%= data.id %>" method="post">
+    <div>
+      <label for="first_name">First Name</label>
+      <br>
+      <input type="text" name="first_name" value="<%= data.first_name %>">
+    </div>
+    <br>
+    <div>
+      <label for="last_name">Last Name</label>
+      <br>
+      <input type="text" name="last_name" value="<%= data.last_name %>">
+    </div>
+    <br>
+    <div>
+      <input type="radio" name="gender" value="male" <% if(data.gender === "male"){ __append('checked') } %> >
+      <label for="male">Male</label>
+      <input type="radio" name="gender" value="female" <% if(data.gender === "female"){ __append('checked') } %> >
+      <label for="female">Female</label>
+    </div>
+    <br>
+    <div>
+      <label for="email">Email</label>
+      <br>
+      <input type="text" name="email" value="<%= data.email %>">
+    </div>
+    <br>
+    <div>
+      <label for="phone_number">Phone Number</label>
+      <br>
+      <input type="text" name="phone_number" value="<%= data.phone_number %>">
+    </div>
+    <br>
+    <div>
+        <button type="submit" style="margin-right: 10px;">Register</button>
+        <a href="/users">Cancel</a>
+    </div>
+  </form>
+</div>
+
+<%- include("partials/foot") %>
