@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const {Course, UserCourse, User} = require('../models')
 const convert = require('../helpers/formatCurrency')
 const {Op} = require('sequelize')
@@ -31,4 +32,21 @@ class CourseController {
   }
 }
 
+=======
+const { Course } = require('../models/index')
+
+class CourseController {
+    static seeAll (req, res) {
+        Course.findAll()
+        .then(function(data){
+            res.send(data)
+        }).catch(function(err){
+            res.send(err)
+        })
+    }
+    
+}
+
+
+>>>>>>> 53fe0c721988ce8655ef9bb4a71677ae43e6fa97
 module.exports = CourseController

@@ -11,7 +11,11 @@ const checkLogin = function (req,res,next) {
   }
 }
 
+<<<<<<< HEAD
 const courseRouter = require('./course')
+=======
+const coursesRouter = require('./course')
+>>>>>>> 53fe0c721988ce8655ef9bb4a71677ae43e6fa97
 const userRouter = require("./user")
 
 router.get("/", UserController.loginForm)
@@ -31,6 +35,10 @@ router.get("/home", (req,res) => {
 router.get("/logout", UserController.logout)
 
 router.use("/users", userRouter)
+<<<<<<< HEAD
 router.use('/courses', courseRouter)
+=======
+router.use('/courses', coursesRouter)
+>>>>>>> 53fe0c721988ce8655ef9bb4a71677ae43e6fa97
 
 module.exports = router

@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+<<<<<<< HEAD
       Course.belongsToMany(models.User, {through: models.UserCourse}, {
         hooks:true
       })
@@ -21,6 +22,16 @@ module.exports = (sequelize, DataTypes) => {
   };
   Course.init({
     title: DataTypes.STRING,
+=======
+      Course.belongsToMany(models.User, {
+        through: 'UserCourse',
+        foreignKey: 'user_id'
+      })
+    }
+  };
+  Course.init({
+    course_tittle: DataTypes.STRING,
+>>>>>>> 53fe0c721988ce8655ef9bb4a71677ae43e6fa97
     description: DataTypes.STRING,
     image: DataTypes.STRING,
     price: DataTypes.INTEGER
