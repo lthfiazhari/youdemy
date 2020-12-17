@@ -10,7 +10,7 @@ const checkLogin = function (req,res,next) {
   }
 }
 
-// const coursesRouter = require('./course')
+const coursesRouter = require('./course')
 const userRouter = require("./user")
 
 router.get("/", UserController.loginForm)
@@ -30,6 +30,6 @@ router.get("/home", (req,res) => {
 router.get("/logout", UserController.logout)
 
 router.use("/users", userRouter)
-// router.use('/courses', coursesRouterr)
+router.use('/courses', coursesRouter)
 
 module.exports = router
