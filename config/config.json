@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "rio",
-    "password": null,
+    "username": "postgres",
+    "password": "oppie7070",
     "database": "youdemy",
     "host": "localhost",
     "dialect": "postgres"

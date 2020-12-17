@@ -2,6 +2,7 @@ const { User, Course, UserCourse } = require("../models")
 const getFullName = require("../helpers/getFullName")
 const { comparePassword } = require("../helpers/password")
 const convert = require('../helpers/formatCurrency')
+const MailHelper = require("../helpers/nodemailer")
 
 class UserController {
   static loginForm(req,res) {
@@ -29,6 +30,8 @@ class UserController {
     }
     User.create(obj)
       .then(data => {
+        let help = new MailHelper(obj.email.trim())
+        help.mailer()
         res.render("registersuccess", {data})
       })
       .catch(err => {
