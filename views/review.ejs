@@ -1,0 +1,24 @@
+<%- include('./partials/head', {title: 'Youdemy - Add Review'}) %> 
+<%- include("./partials/nav") %>
+
+  <h1 style="text-align: center;">Write your review here!</h1>
+  <form action="/users/review/<%= data.CourseId %>/<%= data.UserId %>" method="post">
+    <div>
+      <label for="rating">Rating :</label>
+      <select name="rating" id="rating" style="width: 50px;">
+        <% for( let i = 1; i <= 5; i++ ) { %>
+        <option value="<%= i %>" name="rating"><%= i %></option>
+        <% } %>
+      </select><br>
+    </div>
+    <br>
+    <div>
+      <label for="review">Review :</label><br>
+      <input name="review" type="text"><br>
+    </div>
+    <br>
+    <button type="submit">send</button>
+    <a href="/users/seecourse/<%=data.CourseId %>">Cancel</a>
+  </form>
+</body>
+</html>

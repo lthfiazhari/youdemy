@@ -105,6 +105,87 @@ class UserController {
         res.send(err)
       })
   }
+  static seeCourse(req, res){
+    let paramId = req.params.id
+    User.findByPk(paramId, {include: Course})
+      .then(data => res.render('seeCourses', {data, convert}))
+      .catch(err => res.send(err))
+  }
+  static menuCourse(req, res){
+    let paramId = req.params.id
+    let listCourse = []
+    Course.findAll()
+      .then(data => {
+        listCourse = data
+        return User.findByPk(paramId, {include: Course})
+      })
+      .then(data => res.render('menucourse', {data, listCourse, convert}))
+      .catch(err => res.send(err))
+  }
+
+static buyCourse(req, res){
+    let paramId = req.params.id
+    let order = {
+      UserId: +paramId,
+      CourseId: +req.body.course
+    }
+    let userCourseData
+    let courseData
+    let userData
+    UserCourse.create(order)
+      .then(data => {
+        userCourseData = data
+        return Course.findByPk(data.CourseId)
+      })
+      .then(data => {
+        courseData = data
+        return User.decrement("balance", { by: data.price, where: {
+          id: userCourseData.UserId
+        } })
+      })
+      .then(data => {
+        return User.findByPk(paramId, {include: {
+          model: Course,
+          where: {
+            id: userCourseData.CourseId
+          }
+        }})
+      })
+      .then(data => {
+        userData = data
+        res.redirect(`/users/seecourse/${paramId}`)
+        orderSuccess(userData.email, userData.username, userData.Courses[0].title, userData.Courses[0].price)
+      })
+      .catch(err => res.send(err))
+  }
+
+  static reviewForm(req, res){
+    let obj = {
+      UserId : req.params.userid,
+      CourseId : req.params.courseid
+    }
+      res.render('review', {data: obj})
+  }
+
+  static reviewPost(req, res){
+    const userid = req.params.userid
+    const courseid = req.params.courseid
+    let obj = {
+      rating: req.body.rating,
+      review: req.body.review 
+    }
+    UserCourse.update(obj, {
+      where: {
+        UserId: userid,
+        CourseId: courseid
+      }
+    })
+      .then(data => {
+        console.log(data);
+        res.redirect('/users')
+      })
+        .catch(err => res.send(err))
+  }
   static checkLogin(req,res) {
     const username = req.body.username
     const password = req.body.password

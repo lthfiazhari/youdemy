@@ -1,0 +1,62 @@
+[
+  {
+    "title": "How to be a programmer",
+    "price": 500000,
+    "description": "This is a fast way to become a programmer",
+    "image": "https://hackernoon.com/hn-images/1*We_yPZdShpUY2jRcSKn5sg.jpeg"
+  },
+  {
+    "title": "The Ultimate Drawing Course - Beginner to Advanced",
+    "price": 250000,
+    "description": "Learn the #1 most important building block of all art",
+    "image": "https://cnet3.cbsistatic.com/img/lbxQPa_5eIyLRgU7qYBr_Y3ylmA=/940x528/2020/06/04/5bfde48b-421b-4f8a-9a7c-d2a05ba42c90/ultimate-drawing-4.jpg"
+  },
+  {
+    "title": "Adobe Xd Masterclass - UI / UX Design From Scratch",
+    "price": 650000,
+    "description": "The most complete course to get started in UI / UX design using Adobe Xd",
+    "image": "https://www.xdguru.com/wp-content/uploads/2017/03/adobe-xd-course-1014x487.jpg"
+  },
+  {
+    "title": "Complete Web Design",
+    "price": 300000,
+    "description": "3 in 1 Course: Learn to design websites with Figma",
+    "image": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/FSIjaoI2QtKWZL65cogd"
+  },
+  {
+    "title": "The Complete Digital Marketing Course",
+    "price": 400000,
+    "description": "Master Digital Marketing Strategy",
+    "image": "https://www.pro.edu.np/wp-content/uploads/2020/06/digMar.jpeg"
+  },
+  {
+    "title": "Facebook Ads & Facebook Marketing MASTERY",
+    "price": 0,
+    "description": "Facebook Marketing from beginner to advanced!",
+    "image": "https://cdnwp.mobidea.com/academy/wp-content/uploads/2018/12/facebook-ads-courses-760x428.jpg"
+  },
+  {
+    "title": "Ultimate Google Ads Training",
+    "price": 850000,
+    "description": "Google Ads 2020: How our clients have transformed their sales using Google Ads",
+    "image": "https://scontent-sin6-3.xx.fbcdn.net/v/t31.0-8/13996274_232224443841559_8049201986086345994_o.jpg?_nc_cat=110&ccb=2&_nc_sid=6e5ad9&_nc_ohc=PjrRXeiZxbkAX9mGGPz&_nc_ht=scontent-sin6-3.xx&oh=0aa33a87a3c607bd0f7c9fa82fe2f8aa&oe=6001A082"
+  },
+  {
+    "title": "Affiliate Marketing 101",
+    "price": 0,
+    "description": "What affiliate marketing is, how it works, and how to earn from it.",
+    "image": "https://businessfirstfamily.com/wp-content/uploads/2019/04/affiliate-marketing-course.jpg"
+  },
+  {
+    "title": "Instagram Marketing 2020",
+    "price": 150000,
+    "description": "Attract Hyper-Targeted Instagram Followers",
+    "image": "https://www.digitalvidya.com/wp-content/uploads/2019/02/instagram-marketing.jpg"
+  },
+  {
+    "title": "Social Media Marketing MASTERY",
+    "price": 0,
+    "description": "MASTER online marketing on Twitter, Pinterest, Instagram, YouTube, Facebook, Google and more ad platforms!",
+    "image": "https://www.digitalvidya.com/wp-content/uploads/2016/12/social-media-marketer_banner.png"
+  }
+]

@@ -1,0 +1,23 @@
+<%- include('./partials/head', {title: 'Youdemy - Course list'}) %> 
+<%- include("./partials/nav") %>
+
+<h1 style="text-align: center;">Hello <%= data.getFullName() %> </h1>
+<p style="text-align: center;">Balance: Rp. <%= convert(data.balance) %> </p>
+<table border="1px" class="table table-bordered">
+  <tr style="background-color:whitesmoke">
+    <th>Title</th>
+    <th>Description</th>
+    <th>Image</th>
+    <th>Action</th>
+  </tr>
+  <% data.Courses.forEach(e => {%>
+  <tr>
+    <td><%= e.title %></td>
+    <td><%= e.description %></td>
+    <td><img src="<%= e.image %>" alt="<%= e.title %>" width="150px" height="auto"></td>
+    <td><a href="/users/review/<%= data.id %>/<%= e.id %>">Review</a></td>
+  </tr>
+  <% }); %>
+</table>
+</body>
+</html>

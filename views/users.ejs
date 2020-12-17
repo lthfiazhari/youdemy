@@ -2,7 +2,7 @@
 <%- include('./partials/nav') %> 
 
 <h1>User management</h1>
-<table border="1">
+<table border="1" class="table table-bordered">
   <tr>
     <th>Name</th>
     <th>Email</th>
@@ -22,6 +22,8 @@
       <button><a href="users/addbalance/<%= data[i].id %>"> Add Balance </a></button>
       <button><a href="users/edit/<%= data[i].id %>"> Edit </a></button>
       <button><a href="users/delete/<%= data[i].id %>"> Delete </a></button>
+      <button><a href="/users/menucourse/<%= data[i].id %>"> Buy Course </a></button>
+                <button><a href="/users/seecourse/<%= data[i].id %>"> See Course </a></button>
     </td>
   </tr>
   <% } %>

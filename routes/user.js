@@ -12,9 +12,12 @@ router.post("/edit/:id", UserController.editUser)
 
 router.get("/delete/:id", UserController.delete)
 
-// router.get("/seecourse/:id", UserController.seeCourse)
+router.get("/seecourse/:id", UserController.seeCourse)
 
-// router.get("/menucourse/:id", UserController.menuCourse)
-// router.post("/menucourse/:id", UserController.buyCourse)
+router.get("/menucourse/:id", UserController.menuCourse)
+router.post("/menucourse/:id", UserController.buyCourse)
+
+router.get("/review/:courseid/:userid", UserController.reviewForm)
+router.post("/review/:courseid/:userid", UserController.reviewPost)
 
 module.exports = router;

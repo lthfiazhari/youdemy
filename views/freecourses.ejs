@@ -1,0 +1,30 @@
+<%- include('./partials/head', {title: 'Youdemy - Free Course'}) %> 
+<%- include("./partials/nav") %>
+
+<div style="margin-top: 50px; text-align: center;">
+  <h1>Free Courses</h1><br>
+  <br>
+  <a href="/courses/add"><button class="btn btn-warning">Add Course</button></a>
+  <table border="1px" class="table table-bordered">
+    <tr style="background-color:whitesmoke">
+      <th>Title</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Action</th>
+    </tr>
+    <% data.forEach(e => { %> 
+    <tr>
+      <td><%= e.title %></td>
+      <td><%= convert(e.price) %></td>
+      <td><%= e.description %></td>
+      <td><img src="<%= e.image %>" alt="<%= e.title %>" width="150px" height="auto"></td>
+      <td>
+        <button class="btn btn-warning"><a href="/courses/review/<%= e.id %>">Reviews</a></button><br><br>
+      </td>
+    </tr>
+    <% }) %> 
+  </table>
+</div>
+
+<%- include('./partials/foot') %> 

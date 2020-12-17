@@ -1,0 +1,18 @@
+<%- include('./partials/head', {title: 'Youdemy - Purchase'}) %> 
+<%- include("./partials/nav") %>
+
+<h1 style="text-align: center;">Hello <%= data.getFullName() %></h1>
+<p style="text-align: center;"><%= data.email %> </p>
+<p style="text-align: center;">Balance: <%= convert(data.balance) %> </p>
+
+<form action="/users/menucourse/<%= data.id %>" method="post" style="text-align: center;">
+  <label>Buy Course:</label>
+  <select name="course" id="course">
+    <% listCourse.forEach(e => { %>
+    <option value="<%= e.id %>"><%= e.title %> -- <%= convert(e.price) %> </option>
+    <% }) %>
+  </select>
+  <button type="submit">Buy</button>
+</form>
+
+<%- include("./partials/foot") %>

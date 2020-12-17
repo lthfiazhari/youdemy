@@ -1,0 +1,18 @@
+<%- include('./partials/head', {title: 'Youdemy - Reviews'}) %> 
+<%- include('./partials/nav') %> 
+<h1>Reviews</h1>
+  <table border="1px" class="table table-bordered">
+    <tr>
+      <th>Name</th>
+      <th>Rating</th>
+      <th>Review</th>
+    </tr>
+    <% data.forEach(e => { %>
+    <tr>
+      <td><%= e.User.getFullName() %> </td>
+      <td><%= e.rating %> </td>
+      <td><%= e.review %> </td>
+    </tr>
+    <% }) %>
+  </table>
+<%- include('./partials/foot') %> 
