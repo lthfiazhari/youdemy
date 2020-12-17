@@ -1,0 +1,48 @@
+<%- include('./partials/head', {title: 'Youdemy - Register'}) %> 
+
+<h1>Youdemy</h1>
+<form action="/register" method="post">
+  <div>
+    <label for="first_name">First name</label><br>
+    <input type="text" name="first_name">
+  </div>
+  <br>
+  <div>
+    <label for="last_name">Last name</label><br>
+    <input type="text" name="last_name">
+  </div>
+  <br>
+  <div>
+    <label for="email">Email</label><br>
+    <input type="email" name="email">
+  </div>
+  <br>
+  <div>
+    <label for="phone_number">Phone number</label><br>
+    <input type="number" name="phone_number">
+  </div>
+  <br>
+  <div>
+    <label for="username">Username</label><br>
+    <input type="text" name="username">
+  </div>
+  <br>
+  <div>
+    <label for="password">Password</label><br>
+    <input type="password" name="password">
+  </div>
+  <br>
+  <div>
+    <input type="radio" name="gender" id="" value="male">
+    <label for="male">Male</label>
+    <input type="radio" name="gender" id="" value="female">
+    <label for="male">Female</label>
+  </div>
+  <br>
+  <div>
+    <button type="submit">Register</button>
+    <button><a href="/">Cancel</a></button>
+  </div>
+</form>
+
+<%- include('./partials/foot') %>
