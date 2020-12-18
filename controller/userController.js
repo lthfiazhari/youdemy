@@ -76,24 +76,32 @@ class UserController {
         res.render("edituser",{data})
       })
   }
+
   static editUser(req,res) {
+    const id = req.params.id;
     let obj = {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
+      gender: req.body.gender,
       email: req.body.email,
-      phone_number: req.body.phone_number,
-      username: req.body.username,
-      password: req.body.password,
-      gender: req.body.gender
+      phone_number: req.body.phone_number
     }
-    User.update(obj)
-      .then(data => {
-        res.redirect("/users", {data})
+    User.findByPk(id)
+      .then(() => {
+        return User.update(obj,{
+          where: {
+            id:id
+          }
+        })
+      })
+      .then(() => {
+        res.redirect("/users")
       })
       .catch(err => {
         res.send(err)
       })
   }
+
   static delete(req,res) {
     const id = req.params.id
     User.destroy({
